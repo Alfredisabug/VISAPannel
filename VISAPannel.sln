@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VISAPannel", "VISAPannel.csproj", "{FD84EB6D-5405-4C60-AF28-48265A4130DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD84EB6D-5405-4C60-AF28-48265A4130DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD84EB6D-5405-4C60-AF28-48265A4130DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD84EB6D-5405-4C60-AF28-48265A4130DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD84EB6D-5405-4C60-AF28-48265A4130DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E9E838A7-21FF-4E74-8BB3-939FAD41C18D}
+	EndGlobalSection
+EndGlobal
