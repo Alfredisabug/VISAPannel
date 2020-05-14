@@ -25,32 +25,33 @@
                 <ColumnDefinition Width="100"></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Content="Refresh"></Button>
+            <Button Content="Refresh" Click="RefreshDevice"></Button>
         </Grid>
-        <ListBox HorizontalContentAlignment="Stretch" MinHeight="100"></ListBox>
+        <ListBox x:Name="InsListBox" HorizontalContentAlignment="Stretch" MinHeight="100"></ListBox>
         <Grid Grid.Column="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="100"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            
+
             <TextBlock Text="String to Write"></TextBlock>
-            <TextBox Grid.Column="1" Text="*IDN?"></TextBox>
+            <TextBox x:Name="CMDTextBox" Grid.Column="1" Text="*IDN?"></TextBox>
         </Grid>
 
         <Grid Grid.Column="3">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="247*"></ColumnDefinition>
+                <ColumnDefinition Width="35*"></ColumnDefinition>
+                <ColumnDefinition Width="211*"/>
+                <ColumnDefinition Width="247*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Button Content="Query"></Button>
-            <Button Content="Write" Grid.Column="1"></Button>
-            <Button Content="Read" Grid.Column="2"></Button>
+            <Button Content="Query" Click="QueryIns"></Button>
+            <Button Content="Write" Grid.Column="1" Grid.ColumnSpan="2"></Button>
+            <Button Content="Read" Grid.Column="2" Grid.ColumnSpan="2" Margin="211,0,4,5"></Button>
         </Grid>
         <TextBlock Text="Read string:"></TextBlock>
-        <TextBox MinHeight="50"></TextBox>
+        <TextBox x:Name="ReturnDataTextBox" MinHeight="50"></TextBox>
         <Button Content="clear"></Button>
-        <Button Content="About" Click="Button_Click"></Button>
+        <Button Content="About" Click="GoToAbout"></Button>
     </StackPanel>
 </Page>
