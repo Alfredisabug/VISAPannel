@@ -18,8 +18,8 @@
         <Border BorderBrush="Black" BorderThickness="2" Margin="10" Padding="5">
             <StackPanel>
                 <TextBlock Text="Author: Alfred Wu"></TextBlock>
-                <TextBlock Text="Last update time: 20200513"></TextBlock>
-                <TextBlock Text="version: 0.0.1"></TextBlock>
+                <TextBlock Text="Last update time: 20200515"></TextBlock>
+                <TextBlock Text="version: 1.0.0"></TextBlock>
             </StackPanel>
         </Border>
 

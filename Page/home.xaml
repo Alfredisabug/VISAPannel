@@ -40,18 +40,18 @@
 
         <Grid Grid.Column="3">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="247*"></ColumnDefinition>
-                <ColumnDefinition Width="35*"></ColumnDefinition>
-                <ColumnDefinition Width="211*"/>
-                <ColumnDefinition Width="247*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
+            
             <Button Content="Query" Click="QueryIns"></Button>
-            <Button Content="Write" Grid.Column="1" Grid.ColumnSpan="2"></Button>
-            <Button Content="Read" Grid.Column="2" Grid.ColumnSpan="2" Margin="211,0,4,5"></Button>
+            <Button Content="Write" Grid.Column="1" Click="WriteToIns" ></Button>
+            <Button Content="Read" Grid.Column="2" Click="ReadFromIns"></Button>
         </Grid>
         <TextBlock Text="Read string:"></TextBlock>
         <TextBox x:Name="ReturnDataTextBox" MinHeight="50"></TextBox>
-        <Button Content="clear"></Button>
+        <Button x:Name="ClearBtn" Content="clear" Click="ClearText"></Button>
         <Button Content="About" Click="GoToAbout"></Button>
     </StackPanel>
 </Page>

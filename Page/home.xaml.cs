@@ -37,7 +37,6 @@ namespace VISAPannel.Page
 
         private void RefreshDevice(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("refresh");
             InsList.Clear();
             using (var rm = new ResourceManager())
             {
@@ -57,7 +56,7 @@ namespace VISAPannel.Page
                     }
                     InsListBox.ItemsSource = InsList;
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
@@ -67,13 +66,16 @@ namespace VISAPannel.Page
         #region 開啟儀器
         private bool OpenIns()
         {
+            if (InsListBox.SelectedItem == null)
+            {
+                return false;
+            }
+
             using (var rm = new ResourceManager())
             {
                 try
                 {
-                    Console.WriteLine("Select GPIB Addrss = " + InsListBox.SelectedItem.ToString());
                     mbSession = (MessageBasedSession)rm.Open(InsListBox.SelectedItem.ToString());
-                    Console.WriteLine("Open success.");
                 }
                 catch (InvalidCastException)
                 {
@@ -109,6 +111,48 @@ namespace VISAPannel.Page
             {
                 string textToWrite = ReplaceCommonEscapeSequences(CMDTextBox.Text);
                 mbSession.RawIO.Write(textToWrite);
+                ReturnDataTextBox.Text = InsertCommonEscapeSequences(mbSession.RawIO.ReadString());
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.Message);
+            }
+
+            closeIns();
+        }
+
+        private void ClearText(object sender, RoutedEventArgs e)
+        {
+            ReturnDataTextBox.Clear();
+        }
+
+        private void WriteToIns(object sender, RoutedEventArgs e)
+        {
+            if (!OpenIns())
+            {
+                return;
+            }
+            try
+            {
+                string textToWrite = ReplaceCommonEscapeSequences(CMDTextBox.Text);
+                mbSession.RawIO.Write(textToWrite);
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.Message);
+            }
+            closeIns();
+        }
+
+        private void ReadFromIns(object sender, RoutedEventArgs e)
+        {
+            if (!OpenIns())
+            {
+                return;
+            }
+
+            try
+            {
                 ReturnDataTextBox.Text = InsertCommonEscapeSequences(mbSession.RawIO.ReadString());
             }
             catch (Exception exp)
