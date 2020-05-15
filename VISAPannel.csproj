@@ -6,6 +6,10 @@
     <UseWPF>true</UseWPF>
     <Platforms>AnyCPU;x86;x64</Platforms>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <ApplicationIcon>JLOGO.ico</ApplicationIcon>
+    <Authors>AlfredWu</Authors>
+    <Company />
+    <Description />
   </PropertyGroup>
 
   <ItemGroup>

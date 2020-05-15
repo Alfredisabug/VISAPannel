@@ -27,7 +27,7 @@
             </Grid.ColumnDefinitions>
             <Button Content="Refresh" Click="RefreshDevice"></Button>
         </Grid>
-        <ListBox x:Name="InsListBox" HorizontalContentAlignment="Stretch" MinHeight="100"></ListBox>
+        <ListBox x:Name="InsListBox" HorizontalContentAlignment="Stretch" MinHeight="100" MaxHeight="100"></ListBox>
         <Grid Grid.Column="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="100"></ColumnDefinition>
